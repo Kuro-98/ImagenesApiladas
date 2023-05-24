@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: url('img/bg.png');
+  background-size: cover;
+
+}
+
+.imagenesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.imagenesContainer .imagen {
+  position: relative;
+  margin-right: -20px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.imagenesContainer .imagen img {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.32s ease-in-out;
+}
+
+.nombrePokemon {
+  position: absolute;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  display: none;
+  min-width: 100px;
+  width: 150px;
+  top: -70px;
+  padding: 10px 15px;
+
+
+}
+
+.imagen:hover .nombrePokemon {
+  display: inline-block;
+  transform: translateY(-20px)
+}
+
+.nombrePokemon .text {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.nombrePokemon::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 40%;
+  bottom: -20px;
+  border-top: 10px solid black;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.imagenesContainer .imagen:hover img {
+  transform: translateY(-20px);
+
+  ;
+}
+
+
+@media screen and (max-width: 680px) {
+  .imagenesContainer {
+    flex-direction: column;
+    height: 180vh;
+  }
+
+}
